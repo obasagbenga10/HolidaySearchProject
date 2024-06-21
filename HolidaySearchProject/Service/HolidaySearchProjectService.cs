@@ -15,7 +15,7 @@ namespace HolidaySearchProject.Service
         {
             var list = _repository.Get();
 
-            string holidayId = default;
+            string holidayId = "";
 
             if (search.DepartingFrom != "Any")
             {
