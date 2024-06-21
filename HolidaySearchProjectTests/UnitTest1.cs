@@ -35,5 +35,13 @@ namespace HolidaySearchProjectTests
 
             Assert.AreEqual("Flight : 7 Hotel : 6",x);
         }
+
+        [TestMethod]
+        public void Test4()
+        {
+            var x = _searchService.BestHoliday(new HolidaySearchProjectParams { DepartingFrom = "LTN", TravellingTo = "LPA", DepartureDate = new DateTime(2023, 12, 21), Duration = 10 });
+
+            Assert.AreEqual("Sorry there are no available holidays. Please try again.", x);
+        }
     }
 }
