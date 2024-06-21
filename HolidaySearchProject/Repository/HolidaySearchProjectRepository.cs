@@ -7,11 +7,13 @@ namespace HolidaySearchProject.Repository
     {
         public HolidaySearchProjectList Get()
         {
-            StreamReader r = new StreamReader("Data\\flight_data.json");
+            var pathFlight = Path.Combine("Data", "flight_data.json");
+            StreamReader r = new StreamReader(pathFlight);
             string flightJsonString = r.ReadToEnd();
             IEnumerable<Flight> flightsList = JsonConvert.DeserializeObject<IEnumerable<Flight>>(flightJsonString);
 
-            StreamReader t = new StreamReader("Data\\hotel_data.json");
+            var pathHotel = Path.Combine("Data", "hotel_data.json");
+            StreamReader t = new StreamReader(pathHotel);
             string hotelJsonString = t.ReadToEnd();
             IEnumerable<Hotel> hotelsList = JsonConvert.DeserializeObject<IEnumerable<Hotel>>(hotelJsonString);
 
